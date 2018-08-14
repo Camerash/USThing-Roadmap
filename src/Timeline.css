@@ -104,7 +104,6 @@
 
 .react-calendar-timeline .rct-header .rct-label.rct-label-only {
   color: #ffffff;
-  background: #c52020;
 }
 
 .react-calendar-timeline .rct-header .rct-label.rct-first-of-type {
@@ -172,7 +171,7 @@
 }
 
 .react-calendar-timeline .rct-vertical-lines .rct-vl.rct-day-6, .react-calendar-timeline .rct-vertical-lines .rct-vl.rct-day-0 {
-  background: rgba(250, 246, 225, 0.5);
+  background: transparent;
 }
 
 .react-calendar-timeline .rct-horizontal-lines .rct-hl-even, .react-calendar-timeline .rct-horizontal-lines .rct-hl-odd {
