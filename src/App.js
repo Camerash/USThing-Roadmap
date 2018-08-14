@@ -7,7 +7,7 @@ import logo from './logo.svg'
 import './Timeline.css'
 import './App.css';
 
-const groups = [{ id: 1, title: 'Marketplace' }, { id: 2, title: 'Community' }]
+const groups = [{ id: 1, title: 'Marketplace', color:'#4d6aaa' }, { id: 2, title: 'Community', color:'#0c876e' }]
 
 const items = [
   {

@@ -70,6 +70,35 @@ var Item = function (_Component) {
   // they are coming from a trusted component anyway
   // (this complicates performance debugging otherwise)
 
+  function LightenDarkenColor(col, amt) {
+  
+    var usePound = false;
+  
+    if (col[0] == "#") {
+        col = col.slice(1);
+        usePound = true;
+    }
+ 
+    var num = parseInt(col,16);
+ 
+    var r = (num >> 16) + amt;
+ 
+    if (r > 255) r = 255;
+    else if  (r < 0) r = 0;
+ 
+    var b = ((num >> 8) & 0x00FF) + amt;
+ 
+    if (b > 255) b = 255;
+    else if  (b < 0) b = 0;
+ 
+    var g = (num & 0x0000FF) + amt;
+ 
+    if (g > 255) g = 255;
+    else if (g < 0) g = 0;
+ 
+    return (usePound?"#":"") + String("000000" + (g | (b << 8) | (r << 16)).toString(16)).slice(-6);
+  
+  }
 
   _createClass(Item, [{
     key: 'shouldComponentUpdate',
@@ -423,7 +452,13 @@ var Item = function (_Component) {
         lineHeight: dimensions.height + 'px'
       };
 
-      var finalStyle = Object.assign({}, _styles.overridableStyles, this.props.selected ? _styles.selectedStyle : {}, this.props.selected & this.canMove(this.props) ? _styles.selectedAndCanMove : {}, this.props.selected & this.canResizeLeft(this.props) ? _styles.selectedAndCanResizeLeft : {}, this.props.selected & this.canResizeLeft(this.props) & this.state.dragging ? _styles.selectedAndCanResizeLeftAndDragLeft : {}, this.props.selected & this.canResizeRight(this.props) ? _styles.selectedAndCanResizeRight : {}, this.props.selected & this.canResizeRight(this.props) & this.state.dragging ? _styles.selectedAndCanResizeRightAndDragRight : {}, props.style, baseStyles);
+      var backgroundColor = this.props.groupColor;
+
+      var background = {
+        background: this.props.selected ? LightenDarkenColor(backgroundColor, -30) : backgroundColor //Darkens the color if selected
+      }
+
+      var finalStyle = Object.assign({}, background, _styles.overridableStyles, this.props.selected ? _styles.selectedStyle : {}, this.props.selected & this.canMove(this.props) ? _styles.selectedAndCanMove : {}, this.props.selected & this.canResizeLeft(this.props) ? _styles.selectedAndCanResizeLeft : {}, this.props.selected & this.canResizeLeft(this.props) & this.state.dragging ? _styles.selectedAndCanResizeLeftAndDragLeft : {}, this.props.selected & this.canResizeRight(this.props) ? _styles.selectedAndCanResizeRight : {}, this.props.selected & this.canResizeRight(this.props) & this.state.dragging ? _styles.selectedAndCanResizeRightAndDragRight : {}, props.style, baseStyles);
       return finalStyle;
     }
   }, {

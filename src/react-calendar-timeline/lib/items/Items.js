@@ -22,6 +22,8 @@ var _generic = require('../utility/generic');
 
 var _calendar = require('../utility/calendar');
 
+var _ = require('lodash');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -102,6 +104,7 @@ var Items = function (_Component) {
       var groupOrders = this.getGroupOrders();
       var visibleItems = this.getVisibleItems(canvasTimeStart, canvasTimeEnd, groupOrders);
       var sortedDimensionItems = (0, _generic.keyBy)(dimensionItems, 'id');
+      var groupData = this.props.groups;
 
       return _react2.default.createElement(
         'div',
@@ -137,7 +140,8 @@ var Items = function (_Component) {
             onItemDoubleClick: _this2.props.onItemDoubleClick,
             onContextMenu: _this2.props.onItemContextMenu,
             onSelect: _this2.props.itemSelect,
-            itemRenderer: _this2.props.itemRenderer
+            itemRenderer: _this2.props.itemRenderer,
+            groupColor: _.find(groupData, {'id': (0, _generic._get)(item, itemGroupKey)}).color
           });
         })
       );
