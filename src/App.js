@@ -30,6 +30,13 @@ const items = [
     title: 'Milestone 1: Basic chat',
     start_time: moment().month(6).date(10).startOf('day'),
     end_time: moment().month(7).date(4).endOf('day')
+  },
+  {
+    id: 4,
+    group: 2,
+    title: 'Milestone 2: Discover',
+    start_time: moment().month(7).date(5).startOf('day'),
+    end_time: moment().month(7).date(18).endOf('day')
   }
 ]
 
