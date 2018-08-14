@@ -10,6 +10,7 @@ var overridableStyles = exports.overridableStyles = {
   borderRadius: '30px',
   textAlign: 'center',
   textOverflow: 'ellipsis',
+  boxShadow: '1px 2px 3px rgba(0, 0, 0, 0.3)',
   zIndex: 80
 };
 var selectedStyle = exports.selectedStyle = {

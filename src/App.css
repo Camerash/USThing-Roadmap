@@ -16,7 +16,7 @@
 .Header-title {
   padding: 0.65em;
   padding-left: 2.5em;
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   font-weight: normal !important;
   font-family: system-ui, sans-serif;
 }
@@ -45,5 +45,5 @@
   color: black;
   text-align: center;
   font-family: system-ui, sans-serif;
-  font-size: 1.5em;
+  font-size: 3vmin;
 }

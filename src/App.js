@@ -68,6 +68,8 @@ class App extends Component {
                 year: 1
               }
             }
+            canMove={false}
+            canResize={false}
             sidebarContent={<div className="Emoji-header"><Emojione className="Emoji-text" text="Projects :clipboard:"></Emojione></div>}
             defaultTimeStart={moment().startOf('month')}
             defaultTimeEnd={moment().startOf('month').add(2, 'M')}
