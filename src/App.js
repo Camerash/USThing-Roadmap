@@ -7,15 +7,15 @@ import logo from './logo.svg'
 import './Timeline.css'
 import './App.css';
 
-const groups = [{ id: 1, title: 'group 1' }, { id: 2, title: 'group 2' }]
+const groups = [{ id: 1, title: 'Marketplace' }, { id: 2, title: 'Community' }]
 
 const items = [
   {
     id: 1,
     group: 1,
-    title: 'item 1',
-    start_time: moment(),
-    end_time: moment().add(1, 'hour')
+    title: 'Development in progress',
+    start_time: moment().startOf('hour').year(2018).month(7).day(1),
+    end_time: moment().endOf('hour').year(2018).month(8).day(31)
   },
   {
     id: 2,

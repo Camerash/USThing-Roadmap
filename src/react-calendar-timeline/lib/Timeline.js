@@ -110,7 +110,7 @@ var ReactCalendarTimeline = function (_Component) {
     }
 
     _this.state = {
-      width: 80,
+      width: 1000,
 
       visibleTimeStart: visibleTimeStart,
       visibleTimeEnd: visibleTimeEnd,
@@ -964,7 +964,6 @@ var _initialiseProps = function _initialiseProps() {
     var visibleTimeStart = from.valueOf();
     var visibleTimeEnd = (0, _moment2.default)(from).add(range, unit).valueOf();
     var zoom = visibleTimeEnd - visibleTimeStart;
-    console.log(from.format())
 
     // can't zoom in more than to show one hour
     if (zoom < 360000) {

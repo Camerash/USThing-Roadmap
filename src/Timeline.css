@@ -137,7 +137,8 @@
 }
 
 .react-calendar-timeline .rct-sidebar .rct-sidebar-row {
-  padding: 0 4px;
+  padding: 0 8px;
+  font-family: system-ui, sans-serif;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
