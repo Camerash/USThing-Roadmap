@@ -1,5 +1,5 @@
 # USThing Roadmap :clock1:
-:sparkles: Past, present and future of USThing 
+>:sparkles: Past, present and future of USThing 
 - ### [Live site](https://usthing-roadmap.netlify.com/)
 
 # // TODO :pencil2:
