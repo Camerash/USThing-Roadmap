@@ -67,12 +67,12 @@ var Sidebar = function (_Component) {
 
 
       var sidebarStyle = {
-        width: '20vw',
+        width: width + 'vw',
         height: height + 'px'
       };
 
       var groupsStyle = {
-        width: width + 'px'
+        width: width + 'vw'
       };
 
       var groupLines = [];

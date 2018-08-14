@@ -300,7 +300,7 @@ var ReactCalendarTimeline = function (_Component) {
         'div',
         {
           className: 'rct-sidebar-header',
-          style: { width: '20vw' }
+          style: { width: this.props.sidebarWidth + 'vw' }
         },
         this.props.sidebarContent
       );
@@ -309,7 +309,7 @@ var ReactCalendarTimeline = function (_Component) {
         'div',
         {
           className: 'rct-sidebar-header rct-sidebar-right',
-          style: { width: this.props.rightSidebarWidth }
+          style: { width: this.props.rightSidebarWidth + 'vw' }
         },
         this.props.rightSidebarContent
       );
@@ -719,7 +719,7 @@ ReactCalendarTimeline.propTypes = {
   children: _propTypes2.default.node
 };
 ReactCalendarTimeline.defaultProps = {
-  sidebarWidth: 150,
+  sidebarWidth: 20,
   rightSidebarWidth: 0,
   dragSnap: 1000 * 60 * 15, // 15min
   minResizeWidth: 20,
