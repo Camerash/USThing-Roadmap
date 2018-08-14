@@ -14,8 +14,8 @@
 }
 
 .Header-title {
-  padding: 0.5em;
-  padding-left: 2em;
+  padding: 0.65em;
+  padding-left: 2.5em;
   font-size: 1.5em;
   font-weight: normal !important;
   font-family: system-ui, sans-serif;
@@ -24,4 +24,10 @@
 .Header-badge {
   margin: 0.75em !important; 
   background-color: rgb(0, 124, 224) !important
+}
+
+.Calendar {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
