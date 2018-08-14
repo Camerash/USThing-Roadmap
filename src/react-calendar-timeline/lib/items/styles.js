@@ -8,13 +8,13 @@ var overridableStyles = exports.overridableStyles = {
   color: 'white',
   cursor: 'pointer',
   background: '#4d6aaa',
-  borderRadius: '20px',
+  borderRadius: '30px',
   textAlign: 'center',
+  textOverflow: 'ellipsis',
   zIndex: 80
 };
 var selectedStyle = exports.selectedStyle = {
   background: '#1d3c70',
-  borderRadius: '20px',
   zIndex: 82
 };
 var selectedAndCanMove = exports.selectedAndCanMove = {

@@ -14,32 +14,27 @@ const items = [
     id: 1,
     group: 1,
     title: 'Development in progress',
-    start_time: moment().startOf('hour').year(2018).month(7).day(1),
-    end_time: moment().endOf('hour').year(2018).month(8).day(31)
+    start_time: moment().month(6).startOf('month'),
+    end_time: moment().month(7).endOf('month')
   },
   {
     id: 2,
-    group: 2,
-    title: 'item 2',
-    start_time: moment().add(-0.5, 'hour'),
-    end_time: moment().add(0.5, 'hour')
+    group: 1,
+    title: 'Internal testing',
+    start_time: moment().month(8).startOf('month'),
+    end_time: moment().month(8).date(15).endOf('day')
   },
   {
     id: 3,
-    group: 1,
-    title: 'item 3',
-    start_time: moment().add(2, 'hour'),
-    end_time: moment().add(3, 'hour')
+    group: 2,
+    title: 'Milestone 1: Basic chat',
+    start_time: moment().month(6).date(10).startOf('day'),
+    end_time: moment().month(7).date(4).endOf('day')
   }
 ]
 
 
 class App extends Component {
-  componentDidMount() {
-    setTimeout(function() { // Delay before setting initial range
-      this.timeline.showPeriod(moment().startOf('month'), 'month', 2)
-    }.bind(this), 0)
-  }
   render() {
     return (
       <div>
@@ -52,7 +47,6 @@ class App extends Component {
         </Heading>
         <div className="Calendar">
           <Timeline
-            ref={(timeline) => { this.timeline = timeline; }}
             groups={groups}
             items={items}
             lineHeight={80}
@@ -69,7 +63,7 @@ class App extends Component {
             }
             sidebarContent={<div className="Emoji-header"><Emojione className="Emoji-text" text="Projects :clipboard:"></Emojione></div>}
             defaultTimeStart={moment().startOf('month')}
-            defaultTimeEnd={moment().startOf('month').add(1, 'M')}
+            defaultTimeEnd={moment().startOf('month').add(2, 'M')}
           />
         </div>
       </div>
