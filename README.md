@@ -1,6 +1,6 @@
 # USThing Roadmap :clock1:
 Past, present and future of USThing :sparkles: 
-### [Live site](https://usthing-roadmap.netlify.com/)
+### [Live site :fire:](https://usthing-roadmap.netlify.com/)
 
 # // TODO :pencil2:
 - Add / edit / delete events
