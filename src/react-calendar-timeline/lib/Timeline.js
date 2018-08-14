@@ -332,7 +332,8 @@ var ReactCalendarTimeline = function (_Component) {
         registerScroll: this.registerScrollListener,
         leftSidebarHeader: leftSidebar,
         rightSidebarHeader: rightSidebar,
-        headerRef: this.props.headerRef
+        headerRef: this.props.headerRef,
+        timelineWidthVw: this.props.timelineWidthVw
       });
     }
   }, {
@@ -606,6 +607,7 @@ ReactCalendarTimeline.propTypes = {
   headerLabelGroupHeight: _propTypes2.default.number,
   headerLabelHeight: _propTypes2.default.number,
   itemHeightRatio: _propTypes2.default.number,
+  timelineWidthVw: _propTypes2.default.number,
 
   minZoom: _propTypes2.default.number,
   maxZoom: _propTypes2.default.number,
@@ -729,6 +731,7 @@ ReactCalendarTimeline.defaultProps = {
   headerLabelGroupHeight: 30,
   headerLabelHeight: 30,
   itemHeightRatio: 0.65,
+  timelineWidthVw: 80,
 
   minZoom: 60 * 60 * 1000, // 1 hour
   maxZoom: 5 * 365.24 * 86400 * 1000, // 5 years
@@ -957,10 +960,11 @@ var _initialiseProps = function _initialiseProps() {
     _this4.props.onTimeChange(newVisibleTimeStart, newVisibleTimeStart + newZoom, _this4.updateScrollCanvas);
   };
 
-  this.showPeriod = function (from, unit) {
+  this.showPeriod = function (from, unit, range = 1) {
     var visibleTimeStart = from.valueOf();
-    var visibleTimeEnd = (0, _moment2.default)(from).add(1, unit).valueOf();
+    var visibleTimeEnd = (0, _moment2.default)(from).add(range, unit).valueOf();
     var zoom = visibleTimeEnd - visibleTimeStart;
+    console.log(from.format())
 
     // can't zoom in more than to show one hour
     if (zoom < 360000) {

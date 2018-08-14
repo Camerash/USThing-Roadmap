@@ -8,6 +8,7 @@
     "react": "^16.4.2",
     "react-calendar-timeline": "^0.19.0",
     "react-dom": "^16.4.2",
+    "react-emoji-render": "^0.4.5",
     "react-scripts": "1.1.4",
     "usthing-ui": "^0.2.1"
   },

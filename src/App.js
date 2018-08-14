@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Badge, Heading, Icon} from 'usthing-ui'
 import Timeline from './react-calendar-timeline'
+import { Emojione } from 'react-emoji-render'
 import moment from 'moment'
 import logo from './logo.svg'
 import './Timeline.css'
@@ -34,6 +35,11 @@ const items = [
 
 
 class App extends Component {
+  componentDidMount() {
+    setTimeout(function() { // Delay before setting initial range
+      this.timeline.showPeriod(moment().startOf('month'), 'month', 2)
+    }.bind(this), 0)
+  }
   render() {
     return (
       <div>
@@ -46,10 +52,24 @@ class App extends Component {
         </Heading>
         <div className="Calendar">
           <Timeline
+            ref={(timeline) => { this.timeline = timeline; }}
             groups={groups}
             items={items}
-            defaultTimeStart={moment().add(-12, 'hour')}
-            defaultTimeEnd={moment().add(12, 'hour')}
+            lineHeight={80}
+            minZoom={864000000}
+            timeStep={
+              {
+                second: 60,
+                minute: 15,
+                hour: 1,
+                day: 1,
+                month: 1,
+                year: 1
+              }
+            }
+            sidebarContent={<div className="Emoji-header"><Emojione className="Emoji-text" text="Projects :clipboard:"></Emojione></div>}
+            defaultTimeStart={moment().startOf('month')}
+            defaultTimeEnd={moment().startOf('month').add(1, 'M')}
           />
         </div>
       </div>

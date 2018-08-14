@@ -56,8 +56,8 @@ var Header = function (_Component) {
           subHeaderLabelFormats = _props.subHeaderLabelFormats,
           headerLabelGroupHeight = _props.headerLabelGroupHeight,
           headerLabelHeight = _props.headerLabelHeight,
-          registerScroll = _props.registerScroll;
-
+          registerScroll = _props.registerScroll,
+          timelineWidthVw = _props.timelineWidthVw;
 
       var headerStyle = {
         top: stickyHeader ? stickyOffset || 0 : 0
@@ -76,7 +76,7 @@ var Header = function (_Component) {
         leftSidebarHeader,
         _react2.default.createElement(
           'div',
-          { style: { width: '80vw' } },
+          { style: { width: timelineWidthVw + 'vw' } },
           _react2.default.createElement(_TimelineElementsHeader2.default, {
             hasRightSidebar: hasRightSidebar,
             showPeriod: showPeriod,

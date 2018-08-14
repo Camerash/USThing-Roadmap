@@ -19,6 +19,7 @@
 }
 
 .react-calendar-timeline .rct-item:hover {
+  border-radius: 25px;
   z-index: 88;
 }
 
@@ -28,7 +29,7 @@
   left: 0px;
   overflow: hidden;
   display: inline-block;
-  border-radius: 2px;
+  border-radius: 20px;
   left: 0;
   padding: 0 6px;
   height: 100%;
@@ -62,10 +63,13 @@
   text-align: center;
   cursor: pointer;
   border-left: 2px solid #bbb;
-  color: #ffffff;
-  background: #c52020;
+  color: black;
   border-bottom: 1px solid #bbb;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .react-calendar-timeline .rct-header .rct-label-group.rct-has-right-sidebar {
@@ -84,10 +88,13 @@
   text-align: center;
   cursor: pointer;
   border-left: 1px solid #bbb;
-  color: #333333;
-  background: #f0f0f0;
+  color: black;
   border-bottom: 1px solid #bbb;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .react-calendar-timeline .rct-header .rct-label.rct-label-only {
@@ -168,7 +175,7 @@
 }
 
 .react-calendar-timeline .rct-horizontal-lines .rct-hl-odd {
-  background: rgba(0, 0, 0, 0.05);
+  background: transparent;
 }
 
 .react-calendar-timeline .rct-horizontal-lines .rct-hl-even {
